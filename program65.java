@@ -1,0 +1,45 @@
+import java.util.*;
+
+class Digits
+{
+    public int countDigits(int iNo)
+    {
+       int icnt = 0 , iDigit = 0;
+
+      
+        
+        while(iNo = 0)
+        {
+           iDigit = iNo % 10 ;
+
+           icnt++;
+
+           iNo = iNo / 10;  
+
+
+
+        }
+        return icnt ;
+
+    }
+}
+
+
+class program65
+{
+    public static void main(String A[])
+    { 
+         Scanner sobj = new Scanner(System.in); 
+         
+          System.out.println("Enter number : ");
+          int value = sobj.nextInt();
+
+          Digits dobj = new Digits();
+
+          int iRet = dobj.countDigits(ivalue);
+
+          System.out.println("number of digits are : "+iRet);
+
+
+    }
+}
