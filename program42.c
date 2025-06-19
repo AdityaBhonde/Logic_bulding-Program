@@ -1,49 +1,41 @@
 #include<stdio.h>
-#include<stdbool.h>
 
-bool CheckPrime(int iNo)
-{ 
-    int icnt = 0 ;
-    bool bFlage = true ;
-
-    if(iNo < 0)
+void Display(int iRow , int iCol )
+{
+    int i = 0 , j = 0 ;
+    for(i = 1 ; i <= iRow ; i++)
     {
-        iNo = - iNo ;
-
-    }
-    for(icnt = 2 ; icnt <= (iNo/2); icnt++)
-    {
-        if(iNo % icnt == 0)
+        for(j = 1 ; j <= iCol ; j++)
         {
-            bFlage = false;
-            break;
+           if(i < j)
+           {
+            printf("%c\t",'*');
+           }
+           else if(i > j)
+           {
+            printf("%c\t",'#');
+           }
+           else
+           {
+              printf("%c\t",'@');
+           }
+           
         }
+        printf("\n"); // To print each row on a new line
     }
-
-    return bFlage;
 }
-
 
 int main()
 {
-   int ivalue = 0; bool bRet = false;
+    int iValue1 = 0 , iValue2 = 0; 
 
-   printf("enter the number ");
-   scanf("%d",&ivalue);
+    printf("Enter the number of rows: ");
+    scanf("%d", &iValue1);
 
-   bRet = CheckPrime(ivalue);
+    printf("Enter the number of columns: ");
+    scanf("%d", &iValue2);
 
-
-   if(bRet == true )
-   {
-    printf(" %d the number is prime number ",ivalue);
-   }
-   else
-   {
-    printf("%d the number is not prime number",ivalue);
-   }
-
-
+    Display(iValue1 , iValue2);
 
     return 0;
 }
